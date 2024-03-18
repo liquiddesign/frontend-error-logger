@@ -11,6 +11,6 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.4",
-        "liquiddesign/slack-logger": "~0.0.7"
+        "liquiddesign/slack-logger": "~0.0.7|~1.0"
     }
 }
