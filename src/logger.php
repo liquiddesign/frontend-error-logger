@@ -3,7 +3,6 @@
 require __DIR__ . '/../../../autoload.php';
 
 use Tracy\Debugger;
-use Tracy\ILogger;
 
 $bootstrapClass = 'App\Bootstrap';
 
@@ -19,4 +18,4 @@ if (!$errorData) {
     die;
 }
 
-Debugger::log($errorData, ILogger::ERROR);
+Debugger::log($errorData, 'frontend');
