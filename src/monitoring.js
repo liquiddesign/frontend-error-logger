@@ -1,3 +1,5 @@
+const frontendReportingUrl = process.env.FRONTEND_REPORTING_URL || ((window.baseUrl || window.location.origin) + '/vendor/liquiddesign/frontend-error-logger/src/logger.php');
+
 const errorTypes = {
 	error: 'error',
 	resourceMissing: 'resource-missing',
@@ -9,7 +11,7 @@ function logErrorData(errorData) {
 	errorData = {...errorData, ...{ url: window.location.href }};
 	const xhr = new XMLHttpRequest();
 
-	xhr.open('POST', (window.baseUrl || window.location.origin) + '/vendor/liquiddesign/frontend-error-logger/src/logger.php', true);
+	xhr.open('POST', frontendReportingUrl, true);
 	xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
 	xhr.send(JSON.stringify(errorData));
 }
